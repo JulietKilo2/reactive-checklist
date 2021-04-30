@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #f3f3fb;
+  font-family: "Playfair Display", serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+button {
+  font-family: "Playfair Display", serif;
+}
+
+.form-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  padding: 2.25rem;
+  border-radius: 0.5rem;
+  width: 50rem;
+  position: relative;
+  top: 5vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.form {
+  margin-top: 2rem;
+  display: flex;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form input {
+  border-color: #f3f3fb;
+  border-width: 0.5px;
+  border-radius: 0.25rem;
+  font-size: 1.85rem;
+}
+
+.form button {
+  border-color: #f3f3fb;
+  border-width: 0.5px;
+  border-radius: 0.25rem;
+  border-color: transparent;
+  font-size: 1.55rem;
+  padding: 0.25rem 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form button:hover {
+  background-color: #448ee4;
+  color: whitesmoke;
+}
+
+.counter-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  width: 20rem;
+  top: 10vh;
+  color: snow;
+  background-color: #2b3a70;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-status {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  padding: 1rem 2.25rem;
+  border-radius: 0.5rem;
+  width: 50rem;
+  position: relative;
+  top: 15vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.item-container {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.25s ease-in-out;
+  border-radius: 0.25rem;
+}
+
+.item {
+  width: 80%;
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  padding: 1rem;
+  transition: all 0.25s ease-in-out;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.item-container:hover {
+  background-color: #b4b4c0;
+}
+
+.checkmark {
+  width: 1.75rem;
+}
+
+i {
+  opacity: 0.5;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.fa-circle,
+.fa-trash-alt {
+  transition: all 0.25s ease-out;
+}
+
+.fa-check-circle {
+  opacity: 1;
+  color: #448ee4;
+}
+
+.fa-circle:hover {
+  opacity: 1;
+  color: #448ee4;
+}
+
+.fa-trash-alt:hover {
+  opacity: 1;
+  color: orangered;
+  transform: rotate(90deg);
 }
