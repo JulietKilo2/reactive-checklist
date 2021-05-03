@@ -7,12 +7,15 @@
 
 .app-container {
   width: 100vw;
-  height: 100vh;
+}
+
+html {
+  font-size: 12px;
 }
 
 body {
   background-color: #f3f3fb;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", sans-serif;
 }
 
 h2 {
@@ -20,7 +23,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 button {
@@ -32,7 +35,7 @@ button {
   background-color: white;
   padding: 2.25rem;
   border-radius: 0.5rem;
-  width: 50rem;
+  width: 90%;
   position: relative;
   top: 5vh;
   margin: 0 auto;
@@ -43,12 +46,14 @@ button {
 }
 
 .form {
+  width: 100%;
   margin-top: 2rem;
   display: flex;
   padding: 0;
 }
 
 .form input {
+  width: 100%;
   border-color: #f3f3fb;
   border-width: 0.5px;
   border-radius: 0.25rem;
@@ -60,7 +65,7 @@ button {
   border-width: 0.5px;
   border-radius: 0.25rem;
   border-color: transparent;
-  font-size: 1.55rem;
+  font-size: 1.25rem;
   padding: 0.25rem 0.5rem;
   margin-left: 1rem;
   cursor: pointer;
@@ -75,7 +80,7 @@ button {
 .counter-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
-  width: 20rem;
+  width: 60%;
   top: 10vh;
   color: snow;
   background-color: #2b3a70;
@@ -93,12 +98,38 @@ button {
   justify-content: space-between;
 }
 
+.progression {
+  margin-top: 10px;
+  width: 100%;
+  background-color: hsl(212, 75%, 18%);
+  border-radius: 20px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.progression-bar {
+  width: 50%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 2.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #448ee4;
+  transition: all 0.3s ease-in-out;
+}
+
+.indicator {
+  width: 100%;
+  text-align: center;
+}
+
 .list-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
   padding: 1rem 2.25rem;
   border-radius: 0.5rem;
-  width: 50rem;
+  width: 90%;
   position: relative;
   top: 15vh;
   margin: 0 auto;
@@ -135,6 +166,12 @@ button {
   margin-left: 1rem;
   padding: 1rem;
   transition: all 0.25s ease-in-out;
+}
+
+li {
+  width: 100%;
+  overflow-wrap: break-word;
+  line-height: 1.25;
 }
 
 .completed {
@@ -174,4 +211,38 @@ i {
   opacity: 1;
   color: orangered;
   transform: rotate(90deg);
+}
+
+/* Media queries */
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+  .form-container,
+  .list-container {
+    width: 80%;
+  }
+  .counter-container {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .form-container,
+  .list-container {
+    width: 60%;
+  }
+  .counter-container {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1070px) {
+  .form-container,
+  .list-container {
+    width: 50%;
+  }
+  .counter-container {
+    width: 25%;
+  }
 }

@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const List = ({ list, handleStatus, deleteItem, handleCount }) => {
   return (
     <div className="list-container">

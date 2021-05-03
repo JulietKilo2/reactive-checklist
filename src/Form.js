@@ -1,9 +1,7 @@
-import List from "./List";
-
-function Form({ handleSubmit, name, setName }) {
+function Form({ handleSubmit, name, list, setName }) {
   return (
     <div className="form-container">
-      <h2>What's next?</h2>
+      {list.length > 0 ? <h2>What's next?</h2> : <h2>Let's get started!</h2>}
       <form className="form" onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"

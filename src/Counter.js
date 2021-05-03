@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const Counter = ({ count, list }) => {
   const [text, setText] = useState("");
+
   const flavoredText = () => {
     const percentage = (count / list.length) * 100;
     if (percentage === 100) {
@@ -13,9 +14,15 @@ const Counter = ({ count, list }) => {
       return "Getting started.";
     }
   };
+
+  const getPercentage = () => {
+    return Math.round((count / list.length) * 100);
+  };
+
   useEffect(() => {
     setText(flavoredText);
   }, [count, list]);
+
   return (
     <div className="counter-container">
       <div className="counter-status">
@@ -25,7 +32,14 @@ const Counter = ({ count, list }) => {
         </span>
       </div>
       <div className="progression">
-        <div className="progression-bar">Bar</div>
+        <div
+          className="progression-bar"
+          style={{ width: `${getPercentage()}%` }}
+        >
+          <span className="indicator">
+            {getPercentage() > 0 ? `${getPercentage()}%` : ""}
+          </span>
+        </div>
       </div>
     </div>
   );

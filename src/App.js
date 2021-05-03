@@ -4,12 +4,18 @@ import Form from "./Form";
 import List from "./List";
 import Counter from "./Counter";
 
+const loadLocalItems = () => {
+  const items = JSON.parse(localStorage.getItem("items"));
+  if (items) {
+    return items;
+  } else {
+    return [];
+  }
+};
+
 function App() {
   const [name, setName] = useState("");
-  const [list, setList] = useState([
-    { id: 0, name: "Hello todolist, my old friend", status: false },
-    { id: 1, name: "I've come to build you again", status: true },
-  ]);
+  const [list, setList] = useState(loadLocalItems);
   const [count, setCount] = useState(0);
 
   const handleCount = () => {
@@ -55,18 +61,28 @@ function App() {
 
   useEffect(() => {
     handleCount();
+    localStorage.setItem("items", JSON.stringify(list));
   }, [list]);
 
   return (
     <div className="app-container">
-      <Form name={name} setName={setName} handleSubmit={handleSubmit} />
-      <Counter count={count} list={list} />
-      <List
+      <Form
+        name={name}
         list={list}
-        handleStatus={handleStatus}
-        deleteItem={deleteItem}
-        handleCount={handleCount}
+        setName={setName}
+        handleSubmit={handleSubmit}
       />
+      {list.length > 0 ? <Counter count={count} list={list} /> : ""}
+      {list.length > 0 ? (
+        <List
+          list={list}
+          handleStatus={handleStatus}
+          deleteItem={deleteItem}
+          handleCount={handleCount}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
