@@ -1,5 +1,5 @@
 # Reactive CheckList
-This is one of my portfolio projects. Check out my [website](https//:devsub.netlify.app) to see more! 
+This is one of my portfolio projects. Check out my [website](https://devsub.netlify.app/) to see more! 
 Click this [link](https://reactivelist.netlify.app/) to see the live demo.
 
 ## DESCRIPTION
